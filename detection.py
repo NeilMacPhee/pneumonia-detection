@@ -125,7 +125,7 @@ model.compile(
 
 
 history=model.fit(X_train,Y, validation_split=0.1, verbose=1, epochs=5)
-loss,accuracy=model.evaluate(X_test_scaled, Y_test)
+loss,accuracy=model.evaluate(X_test, Y_test)
 
 
 
