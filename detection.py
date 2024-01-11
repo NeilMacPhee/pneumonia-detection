@@ -81,6 +81,12 @@ for img_file in test_pneu_data:
     image = np.array(image)
     test_img_data.append(image)
 
+test_normal_labels = [0]*len(test_normal_data)
+test_pneu_labels = [1]*len(test_pneu_data)
+
+test_labels = test_pneu_labels + test_normal_labels
+Y_test = np.array(test_labels)
+
 print("Num of images: ", len(img_data))
 print("Num of test images: ", len(test_img_data))
 
@@ -126,7 +132,6 @@ model.compile(
 
 history=model.fit(X_train,Y, validation_split=0.1, verbose=1, epochs=5)
 loss,accuracy=model.evaluate(X_test, Y_test)
-
 
 
 plt.plot(history.history['loss'], label='training loss')
