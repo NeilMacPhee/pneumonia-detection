@@ -136,9 +136,11 @@ loss,accuracy=model.evaluate(X_test, Y_test)
 
 plt.plot(history.history['loss'], label='training loss')
 plt.plot(history.history['val_loss'], label='validation loss')
+plt.show()
 
 
 
 plt.plot(history.history['acc'], label='training accuracy')
 plt.plot(history.history['val_acc'], label='validation accuracy')
+plt.show()
 
